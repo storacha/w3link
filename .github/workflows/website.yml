@@ -129,7 +129,7 @@ jobs:
 
   changelog:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    name: Release
+    name: Changelog
     runs-on: ubuntu-latest
     needs:
       - check
