@@ -125,7 +125,7 @@ jobs:
       - run: pnpm install
       - run: npx dnslink-cloudflare --record staging --domain w3s.link --link /ipfs/${{ needs.build.outputs.cid }}
         env:
-          CF_API_TOKEN: ${{ secrets.CF_GATEWAY_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
 
   changelog:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -176,10 +176,10 @@ jobs:
         if: ${{ steps.tag-release.outputs.releases_created }}
       - run: pnpm exec wrangler pages publish --project-name w3s-link --branch main ./packages/website/out
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_GATEWAY_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT }}
         if: ${{ steps.tag-release.outputs.releases_created }}
       - run: npx dnslink-cloudflare --record _dnslink --domain w3s.link --link /ipfs/${{ needs.build.outputs.cid }}
         env:
-          CF_API_TOKEN: ${{ secrets.CF_GATEWAY_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         if: ${{ steps.tag-release.outputs.releases_created }}
