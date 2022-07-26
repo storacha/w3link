@@ -1,0 +1,41 @@
+{
+  "name": "w3link-edge-gateway",
+  "version": "1.9.0",
+  "description": "IPFS edge gateway for web3.storage on w3s.link",
+  "private": true,
+  "type": "module",
+  "main": "./dist/worker.mjs",
+  "scripts": {
+    "build": "node scripts/cli.js build",
+    "dev": "miniflare --watch --debug",
+    "deploy": "wrangler publish --env production",
+    "test": "npm run test:setup && npm run test:worker",
+    "test:worker": "ava --verbose test/*.spec.js",
+    "test:setup": "npm run build"
+  },
+  "dependencies": {
+    "itty-router": "^2.4.5",
+    "multiformats": "^9.6.4",
+    "toucan-js": "^2.5.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.7.1",
+    "@types/git-rev-sync": "^2.0.0",
+    "@sentry/cli": "^1.71.0",
+    "@web-std/fetch": "^4.0.0",
+    "@web3-storage/worker-utils": "^0.3.0-dev",
+    "ava": "^3.15.0",
+    "browser-env": "^3.3.0",
+    "delay": "^5.0.0",
+    "esbuild": "^0.14.2",
+    "execa": "^5.1.1",
+    "git-rev-sync": "^3.0.1",
+    "miniflare": "^2.5.0",
+    "sade": "^1.7.4",
+    "smoke": "^3.1.1",
+    "typescript": "4.7.3",
+    "toml": "^3.0.0"
+  },
+  "author": "Vasco Santos <santos.vasco10@gmail.com>",
+  "license": "Apache-2.0 OR MIT"
+}

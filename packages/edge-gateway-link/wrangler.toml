@@ -1,0 +1,71 @@
+# w3s.link wrangler config.
+name = "w3link-edge-gateway"
+main = "./dist/worker.mjs"
+compatibility_date = "2022-07-01"
+compatibility_flags = [ "url_standard" ]
+no_bundle = true
+
+[build]
+command = "npm run build"
+
+# miniflare
+[vars]
+DEBUG = "true"
+ENV = "dev"
+
+# PROD!
+[env.production]
+# name = "w3link-edge-gateway-production"
+account_id = "fffa4b4363a7e5250af8357087263b3a" # Protocol Labs CF account
+routes = [
+  "w3s.link/ipfs/*",
+  "*.ipfs.w3s.link/*",
+  "ipfs.w3s.link/*",
+  "*.ipfs.w3s.link",
+  "w3s.link/ipns/*",
+  "*.ipns.w3s.link/*",
+  "*.ipns.w3s.link"
+]
+
+[env.production.vars]
+GATEWAY_HOSTNAME = 'ipfs.w3s.link'
+DEBUG = "false"
+ENV = "production"
+
+[[env.production.services]]
+binding = "EDGE_GATEWAY"
+type = "service"
+service = "dotstorage-edge-gateway-production"
+environment = "production"
+
+# Staging!
+[env.staging]
+# name = "gateway-nft-storage-staging"
+account_id = "fffa4b4363a7e5250af8357087263b3a" # Protocol Labs CF account
+routes = [
+  "*.ipfs-staging.w3s.link/*",
+  "ipfs-staging.w3s.link/*",
+  "*.ipfs-staging.w3s.link",
+  "*.ipns-staging.w3s.link/*",
+  "*.ipns-staging.w3s.link"
+]
+
+[env.staging.vars]
+GATEWAY_HOSTNAME = 'ipfs-staging.w3s.link'
+DEBUG = "true"
+ENV = "staging"
+
+[[env.staging.services]]
+binding = "EDGE_GATEWAY"
+type = "service"
+service = "dotstorage-edge-gateway-staging"
+environment = "production"
+
+# Test!
+[env.test]
+workers_dev = true
+
+[env.test.vars]
+GATEWAY_HOSTNAME = 'ipfs.localhost:8787'
+DEBUG = "true"
+ENV = "test"

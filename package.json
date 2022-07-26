@@ -1,12 +1,14 @@
 {
-  "name": "w3s.link",
+  "name": "w3link",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
-  "description": "w3s.link packages",
+  "description": "w3link packages",
   "scripts": {
     "test": "run-s test:*",
+    "test:w3link-edge-gateway": "pnpm --filter w3link-edge-gateway test",
+    "build:w3link-edge-gateway": "pnpm --filter w3link-edge-gateway build",
     "test:website": "pnpm --filter website test",
     "build:website": "pnpm --filter website build",
     "lint": "standard",
