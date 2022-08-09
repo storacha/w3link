@@ -5,12 +5,12 @@ on:
       - main
     paths:
       - 'packages/edge-gateway-link/**'
-      - '.github/workflows/w3s-link.yml'
+      - '.github/workflows/edge-gateway-link.yml'
       - 'pnpm-lock.yaml'
   pull_request:
     paths:
       - 'packages/edge-gateway-link/**'
-      - '.github/workflows/w3s-link.yml'
+      - '.github/workflows/edge-gateway-link.yml'
       - 'pnpm-lock.yaml'
 jobs:
   test:
@@ -52,6 +52,8 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     name: Release
     runs-on: ubuntu-latest
+    outputs:
+      releases_created: ${{ steps.tag-release.outputs.releases_created }}
     steps:
       - uses: GoogleCloudPlatform/release-please-action@v3
         id: tag-release
