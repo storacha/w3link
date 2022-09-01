@@ -24,7 +24,8 @@ routes = [
   { pattern = "*.ipfs.w3s.link", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "w3s.link/ipns/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "*.ipns.w3s.link/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
-  { pattern = "*.ipns.w3s.link", zone_id = "ae60d8f737317467ec666dc3851a6277" }
+  { pattern = "*.ipns.w3s.link", zone_id = "ae60d8f737317467ec666dc3851a6277" },
+  { pattern = "*/*", zone_id = "ae60d8f737317467ec666dc3851a6277" }
 ]
 
 [env.production.vars]
