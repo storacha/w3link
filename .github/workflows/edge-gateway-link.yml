@@ -50,7 +50,7 @@ jobs:
           environment: 'staging'
   changelog:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    name: Release
+    name: Changelog
     runs-on: ubuntu-latest
     outputs:
       releases_created: ${{ steps.tag-release.outputs.releases_created }}
