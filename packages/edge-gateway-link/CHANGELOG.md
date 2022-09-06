@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.1.0...w3link-edge-gateway-v1.1.1) (2022-09-06)
+
+
+### Bug Fixes
+
+* redirect to product page ([#14](https://github.com/web3-storage/w3link/issues/14)) ([26ac06a](https://github.com/web3-storage/w3link/commit/26ac06a43fff6bac3596b7b0f6ff2f85e7c75f5d))
+
 ## [1.1.0](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.0.0...w3link-edge-gateway-v1.1.0) (2022-09-01)
 
 
