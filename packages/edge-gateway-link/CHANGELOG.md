@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.1.1...w3link-edge-gateway-v1.1.2) (2022-09-08)
+
+
+### Bug Fixes
+
+* abort race contestants when all fulfill ([#16](https://github.com/web3-storage/w3link/issues/16)) ([0b04804](https://github.com/web3-storage/w3link/commit/0b0480493b0955ea727b48443b99a07d2b5f9eba))
+
 ## [1.1.1](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.1.0...w3link-edge-gateway-v1.1.1) (2022-09-06)
 
 
