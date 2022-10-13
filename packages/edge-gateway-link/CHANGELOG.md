@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.1.2...w3link-edge-gateway-v1.1.3) (2022-10-13)
+
+
+### Bug Fixes
+
+* ipfs path resolution with 301 status ([#19](https://github.com/web3-storage/w3link/issues/19)) ([d7f0878](https://github.com/web3-storage/w3link/commit/d7f0878f59ae35be909855bf825ce387db895d1e))
+
 ## [1.1.2](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.1.1...w3link-edge-gateway-v1.1.2) (2022-09-08)
 
 
