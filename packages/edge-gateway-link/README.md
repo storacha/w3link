@@ -38,7 +38,7 @@ Zooming in on the actual edge gateway:
 Notes:
 
 - Cloudflare Cache is [limited](https://developers.cloudflare.com/workers/platform/limits/#cache-api-limits) to 512 MB size objects.
-- SUperHot perma-cache is shared with nftstorage.link
+- SuperHot perma-cache is shared with nftstorage.link
 
 ## Usage
 
