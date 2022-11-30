@@ -24,11 +24,11 @@ export function getMiniflare () {
     mounts: {
       gateway: {
         scriptPath: './test/scripts/gateway.js',
-        modules: true,
-      },
+        modules: true
+      }
     },
     serviceBindings: {
-      EDGE_GATEWAY: 'gateway',
+      EDGE_GATEWAY: 'gateway'
     }
   })
 }
