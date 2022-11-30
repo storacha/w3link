@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.1.3...w3link-edge-gateway-v1.2.0) (2022-11-30)
+
+
+### Features
+
+* apply csp headers with goodbits ([#26](https://github.com/web3-storage/w3link/issues/26)) ([50e10e2](https://github.com/web3-storage/w3link/commit/50e10e20bfa087bcdd505f1380d12f776506082d))
+
+
+### Bug Fixes
+
+* badbits url ([#21](https://github.com/web3-storage/w3link/issues/21)) ([18b5f2a](https://github.com/web3-storage/w3link/commit/18b5f2a8d1889057b620545ecbc9e44226e1b894))
+
 ## [1.1.3](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.1.2...w3link-edge-gateway-v1.1.3) (2022-10-13)
 
 
