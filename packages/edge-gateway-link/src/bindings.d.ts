@@ -10,7 +10,8 @@ export interface EnvInput {
   LOKI_URL?: string
   LOKI_TOKEN?: string
   EDGE_GATEWAY: Fetcher
-  GATEWAY_HOSTNAME: string,
+  GATEWAY_HOSTNAME: string
+  GOODBITSLIST: KVNamespace
 }
 
 export interface EnvTransformed {

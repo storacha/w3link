@@ -27,6 +27,9 @@ routes = [
   { pattern = "*.ipns.w3s.link", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "*/*", zone_id = "ae60d8f737317467ec666dc3851a6277" }
 ]
+kv_namespaces = [
+  { binding = "GOODBITSLIST", id = "292616354e2a4f83b7ac13ef30d66a30" }
+]
 
 [env.production.vars]
 GATEWAY_HOSTNAME = 'ipfs.w3s.link'
@@ -50,6 +53,9 @@ routes = [
   { pattern = "*.ipns-staging.w3s.link/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "*.ipns-staging.w3s.link", zone_id = "ae60d8f737317467ec666dc3851a6277" }
 ]
+kv_namespaces = [
+  { binding = "GOODBITSLIST", id = "3905c48a814d4a938e500f8b890a8602" }
+]
 
 [env.staging.vars]
 GATEWAY_HOSTNAME = 'ipfs-staging.w3s.link'
@@ -65,6 +71,9 @@ environment = "production"
 # Test!
 [env.test]
 workers_dev = true
+kv_namespaces = [
+  { binding = "GOODBITSLIST" }
+]
 
 [env.test.vars]
 GATEWAY_HOSTNAME = 'ipfs.localhost:8787'

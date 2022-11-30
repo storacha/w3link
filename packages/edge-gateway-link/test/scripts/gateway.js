@@ -1,17 +1,25 @@
+/* global Headers, Response */
+
 export default {
   /**
    * @param {Request} request
    */
-  async fetch(request) {
+  async fetch (request) {
     const reqUrl = new URL(request.url)
     // We need to perform requests as path based per localhost subdomain resolution
     const subdomainCid = getCidFromSubdomainUrl(reqUrl)
     if (subdomainCid) {
-      return new Response('Hello w3s.link! 😎')
+      const headers = new Headers({
+        etag: subdomainCid
+      })
+      return new Response('Hello w3s.link! 😎', {
+        headers,
+        status: 200
+      })
     }
 
     throw new Error('no cid in request')
-  },
+  }
 }
 
 /**
@@ -19,7 +27,7 @@ export default {
  *
  * @param {URL} url
  */
-function getCidFromSubdomainUrl(url) {
+function getCidFromSubdomainUrl (url) {
   const splitHost = url.hostname.split('.ipfs.')
 
   if (!splitHost.length) {
