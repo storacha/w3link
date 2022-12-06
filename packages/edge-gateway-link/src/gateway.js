@@ -66,7 +66,7 @@ function getTransformedResponseWithCspHeaders (response) {
 
   clonedResponse.headers.set(
     'content-security-policy',
-    "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://*.w3s.link/* https://*.githubusercontent.com; form-action 'self' ; navigate-to 'self'; connect-src 'self' blob: data: https://*.w3s.link/*"
+    "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://*.w3s.link/* https://*.nftstorage.link/* https://*.dweb.link/* https://ipfs.io/ipfs/* https://*.githubusercontent.com; form-action 'self' ; navigate-to 'self'; connect-src 'self' blob: data: https://*.w3s.link/* https://*.nftstorage.link/* https://*.dweb.link/* https://ipfs.io/ipfs/*"
   )
 
   return clonedResponse
