@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.2.0...w3link-edge-gateway-v1.2.1) (2022-12-07)
+
+
+### Bug Fixes
+
+* csp headers accept w3link subdomain ([#28](https://github.com/web3-storage/w3link/issues/28)) ([f8acea4](https://github.com/web3-storage/w3link/commit/f8acea4aac272dff2707b96af0cd01c63adde59f))
+
 ## [1.2.0](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.1.3...w3link-edge-gateway-v1.2.0) (2022-11-30)
 
 
