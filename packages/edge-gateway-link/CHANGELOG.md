@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.2.1...w3link-edge-gateway-v1.2.2) (2022-12-08)
+
+
+### Bug Fixes
+
+* CSP directives ([#30](https://github.com/web3-storage/w3link/issues/30)) ([6b19faf](https://github.com/web3-storage/w3link/commit/6b19fafed69b7687585d41fd8613258ce307821b))
+
 ## [1.2.1](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.2.0...w3link-edge-gateway-v1.2.1) (2022-12-07)
 
 
