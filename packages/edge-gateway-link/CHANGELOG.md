@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.3](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.2.2...w3link-edge-gateway-v1.2.3) (2022-12-16)
+
+
+### Bug Fixes
+
+* add dotstorage apis to csp allowlist ([#32](https://github.com/web3-storage/w3link/issues/32)) ([573fc13](https://github.com/web3-storage/w3link/commit/573fc13ac982e11594853928192be5ac973c9702))
+
 ## [1.2.2](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.2.1...w3link-edge-gateway-v1.2.2) (2022-12-08)
 
 
