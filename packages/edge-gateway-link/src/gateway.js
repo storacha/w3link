@@ -73,7 +73,7 @@ function getTransformedResponseWithCspHeaders (response) {
 
   clonedResponse.headers.set(
     'content-security-policy',
-    `default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: ${IPFS_GATEWAYS.join(' ')} ${DOTSTORAGE_APIS.join(' ')} https://*.githubusercontent.com; form-action 'self'; navigate-to 'self'; connect-src 'self' blob: data: ${IPFS_GATEWAYS.join(' ')} ${DOTSTORAGE_APIS.join(' ')}`
+    `default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: ${IPFS_GATEWAYS.join(' ')} ${DOTSTORAGE_APIS.join(' ')} https://*.githubusercontent.com https://tableland.network https://*.tableland.network ; form-action 'self'; navigate-to 'self'; connect-src 'self' blob: data: ${IPFS_GATEWAYS.join(' ')} ${DOTSTORAGE_APIS.join(' ')} https://tableland.network https://*.tableland.network`
   )
 
   return clonedResponse
