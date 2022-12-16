@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.4](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.2.3...w3link-edge-gateway-v1.2.4) (2022-12-16)
+
+
+### Bug Fixes
+
+* add tableland csp exception ([#36](https://github.com/web3-storage/w3link/issues/36)) ([83c49ab](https://github.com/web3-storage/w3link/commit/83c49abc710142a90d552dadcfc0d1027a9e0f17))
+
 ## [1.2.3](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.2.2...w3link-edge-gateway-v1.2.3) (2022-12-16)
 
 
