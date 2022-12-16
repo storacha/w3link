@@ -7,6 +7,13 @@ import { InvalidUrlError } from './errors.js'
 
 const PRODUCT_URL = 'https://web3.storage/products/w3link/'
 const GOODBITS_BYPASS_TAG = 'https://w3s.link/tags/bypass-default-csp'
+const IPFS_GATEWAYS = [
+  'https://*.w3s.link',
+  'https://*.nftstorage.link',
+  'https://*.dweb.link',
+  'https://ipfs.io/ipfs/',
+]
+const DOTSTORAGE_APIS = ['https://*.web3.storage', 'https://*.nft.storage']
 
 /**
  * Handle gateway request
@@ -66,7 +73,7 @@ function getTransformedResponseWithCspHeaders (response) {
 
   clonedResponse.headers.set(
     'content-security-policy',
-    "default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: https://*.w3s.link https://*.nftstorage.link https://*.dweb.link https://ipfs.io/ipfs/ https://*.githubusercontent.com; form-action 'self'; navigate-to 'self'; connect-src 'self' blob: data: https://*.w3s.link https://*.nftstorage.link https://*.dweb.link https://ipfs.io/ipfs/"
+    `default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: ${IPFS_GATEWAYS.join(' ')} ${DOTSTORAGE_APIS.join(' ')} https://*.githubusercontent.com; form-action 'self'; navigate-to 'self'; connect-src 'self' blob: data: ${IPFS_GATEWAYS.join(' ')} ${DOTSTORAGE_APIS.join(' ')}`
   )
 
   return clonedResponse
