@@ -33,6 +33,7 @@ kv_namespaces = [
 
 [env.production.vars]
 GATEWAY_HOSTNAME = 'ipfs.w3s.link'
+CSP_REPORT_URI = 'https://csp-report-to.web3.storage'
 DEBUG = "false"
 ENV = "production"
 
@@ -59,6 +60,7 @@ kv_namespaces = [
 
 [env.staging.vars]
 GATEWAY_HOSTNAME = 'ipfs-staging.w3s.link'
+CSP_REPORT_URI = 'https://staging.csp-report-to.web3.storage'
 DEBUG = "true"
 ENV = "staging"
 

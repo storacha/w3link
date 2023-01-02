@@ -11,9 +11,14 @@ const IPFS_GATEWAYS = [
   'https://*.w3s.link',
   'https://*.nftstorage.link',
   'https://*.dweb.link',
-  'https://ipfs.io/ipfs/',
+  'https://ipfs.io/ipfs/'
 ]
 const DOTSTORAGE_APIS = ['https://*.web3.storage', 'https://*.nft.storage']
+const ALLOWED_LIST = [
+  'https://*.githubusercontent.com',
+  'https://tableland.network',
+  'https://*.tableland.network'
+]
 
 /**
  * Handle gateway request
@@ -59,7 +64,7 @@ export async function gatewayGet (request, env) {
     return response
   }
 
-  return getTransformedResponseWithCspHeaders(response)
+  return getTransformedResponseWithCspHeaders(response, env)
 }
 
 /**
@@ -67,13 +72,22 @@ export async function gatewayGet (request, env) {
  * Content-Security-Policy header specified to only allow requests within same origin.
  *
  * @param {Response} response
+ * @param {import('./bindings').Env} env
  */
-function getTransformedResponseWithCspHeaders (response) {
+function getTransformedResponseWithCspHeaders (response, env) {
   const clonedResponse = new Response(response.body, response)
+  const defaultSrc = `'self' 'unsafe-inline' 'unsafe-eval' blob: data: ${IPFS_GATEWAYS.join(' ')} ${DOTSTORAGE_APIS.join(' ')} ${ALLOWED_LIST.join(' ')}`
+  const connectSrc = `'self' blob: data: ${IPFS_GATEWAYS.join(' ')} ${DOTSTORAGE_APIS.join(' ')} ${ALLOWED_LIST.join(' ')}`
+  const reportUri = env.CSP_REPORT_URI
 
   clonedResponse.headers.set(
     'content-security-policy',
-    `default-src 'self' 'unsafe-inline' 'unsafe-eval' blob: data: ${IPFS_GATEWAYS.join(' ')} ${DOTSTORAGE_APIS.join(' ')} https://*.githubusercontent.com https://tableland.network https://*.tableland.network ; form-action 'self'; navigate-to 'self'; connect-src 'self' blob: data: ${IPFS_GATEWAYS.join(' ')} ${DOTSTORAGE_APIS.join(' ')} https://tableland.network https://*.tableland.network`
+    `default-src ${defaultSrc} ; form-action 'self'; navigate-to 'self'; connect-src ${connectSrc} ; report-to csp-endpoint ; report-uri ${reportUri}`
+  )
+
+  reportUri && clonedResponse.headers.set(
+    'reporting-endpoints',
+    `csp-endpoint="${reportUri}"`
   )
 
   return clonedResponse
