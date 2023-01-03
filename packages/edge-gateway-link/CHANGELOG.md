@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.2.4...w3link-edge-gateway-v1.3.0) (2023-01-03)
+
+
+### Features
+
+* add csp report endpoint ([#39](https://github.com/web3-storage/w3link/issues/39)) ([c8f0cc9](https://github.com/web3-storage/w3link/commit/c8f0cc9b76768b0f63350c24f81fa7cb0383b3f6))
+
 ## [1.2.4](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.2.3...w3link-edge-gateway-v1.2.4) (2022-12-16)
 
 
