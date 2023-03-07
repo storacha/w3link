@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.3.1...w3link-edge-gateway-v1.3.2) (2023-03-07)
+
+
+### Bug Fixes
+
+* handle redirect from edge gateway ([#47](https://github.com/web3-storage/w3link/issues/47)) ([ac16f0b](https://github.com/web3-storage/w3link/commit/ac16f0b8ee1a05d6e801d9d2897285d8012c57ff))
+
 ## [1.3.1](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.3.0...w3link-edge-gateway-v1.3.1) (2023-02-02)
 
 
