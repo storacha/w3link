@@ -48,8 +48,13 @@ export async function gatewayGet (request, env) {
       ...request.cf || {},
       // @ts-ignore custom entry in cf object
       onlyIfCachedGateways: JSON.stringify(['https://nftstorage.link'])
-    }
+    },
+    redirect: 'manual'
   })
+
+  if (response.redirected) {
+    return response
+  }
 
   // Validation layer - CSP bypass
   const resourceCid = decodeURIComponent(
