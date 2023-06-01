@@ -16,7 +16,8 @@ const IPFS_GATEWAYS = [
 const ALLOWED_LIST = [
   'https://*.githubusercontent.com',
   'https://tableland.network',
-  'https://*.tableland.network'
+  'https://*.tableland.network',
+  'https://*.polybase.xyz'
 ]
 
 /**
