@@ -52,17 +52,18 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     name: Changelog
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     outputs:
       releases_created: ${{ steps.tag-release.outputs.releases_created }}
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v3
+      - uses: googleapis/release-please-action@v4
         id: tag-release
         with:
-          path: packages/edge-gateway-link
+          config-file: .github/release-please-config.json
+          manifest-file: .github/release-please-manifest.json
           token: ${{ secrets.GITHUB_TOKEN }}
-          release-type: node
-          monorepo-tags: true
-          package-name: w3link-edge-gateway
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.changelog.outputs.releases_created
     name: Release
