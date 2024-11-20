@@ -49,8 +49,8 @@ export function envAll (request, env, ctx) {
           },
           cloudflare_worker: log.metadata.cloudflare_worker,
           response: {
-            "status_code": log.metadata.response?.status_code,
-            "duration": log.metadata.response?.duration
+            status_code: log.metadata.response?.status_code,
+            duration: log.metadata.response?.duration
           }
         }
       }
