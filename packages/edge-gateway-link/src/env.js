@@ -1,9 +1,7 @@
 /* global BRANCH, VERSION, COMMITHASH, SENTRY_RELEASE */
 
-import Toucan from 'toucan-js'
+import { Toucan, RewriteFrames } from 'toucan-js'
 import { Logging } from '@web3-storage/worker-utils/loki'
-
-import pkg from '../package.json'
 
 /**
  * @typedef {import('./bindings').Env} Env
@@ -37,7 +35,26 @@ export function envAll (request, env, ctx) {
     branch: env.BRANCH,
     worker: 'w3s.link',
     env: env.ENV,
-    sentry: env.sentry
+    sentry: env.sentry,
+    logDataTransformer: (log) =>{
+      /**
+       * removed: metadata.request.cf, metadata.request.headers and metadata.response.headers
+       */
+      return {
+        ...log,
+        metadata: {
+          request: {
+            url: log.metadata.request.url,
+            method: log.metadata.request.method,
+          },
+          cloudflare_worker: log.metadata.cloudflare_worker,
+          response: {
+            status_code: log.metadata.response?.status_code,
+            duration: log.metadata.response?.duration
+          }
+        }
+      }
+    }
   })
   env.log.time('request')
 }
@@ -58,15 +75,13 @@ function getSentry (request, env, ctx) {
     request,
     dsn: env.SENTRY_DSN,
     context: ctx,
-    allowedHeaders: ['user-agent'],
-    allowedSearchParams: /(.*)/,
+    requestDataOptions: {
+      allowedHeaders: ['user-agent'],
+      allowedSearchParams: /(.*)/
+    },
+    integrations: [new RewriteFrames({ root: '/' })],
     debug: false,
     environment: env.ENV || 'dev',
-    rewriteFrames: {
-      // sourcemaps only work if stack filepath are absolute like `/worker.js`
-      root: '/'
-    },
-    release: env.SENTRY_RELEASE,
-    pkg
+    release: env.SENTRY_RELEASE
   })
 }
