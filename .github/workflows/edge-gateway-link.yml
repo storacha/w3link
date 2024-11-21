@@ -34,14 +34,6 @@ jobs:
     needs: test
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 7.0.x
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'pnpm'
-      - run: pnpm install
       - name: Publish app
         uses: cloudflare/wrangler-action@v3
         env:
@@ -52,6 +44,7 @@ jobs:
           apiToken: ${{secrets.CF_GATEWAY_TOKEN }}
           workingDirectory: 'packages/edge-gateway-link'
           environment: 'staging'
+          wranglerVersion: '3.x'
   changelog:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     name: Changelog
@@ -78,15 +71,6 @@ jobs:
       - changelog
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 7.0.x
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          registry-url: 'https://registry.npmjs.org'
-          cache: 'pnpm'
-      - run: pnpm install
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         env:
@@ -97,3 +81,4 @@ jobs:
           apiToken: ${{ secrets.CF_GATEWAY_TOKEN }}
           workingDirectory: 'packages/edge-gateway-link'
           environment: 'production'
+          wranglerVersion: '3.x'
