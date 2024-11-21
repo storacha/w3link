@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.3.2...w3link-edge-gateway-v1.3.3) (2024-11-21)
+
+
+### Bug Fixes
+
+* remove unnecessary log data to optimize storage ([354b052](https://github.com/storacha/w3link/commit/354b052c628e30d2b2f7b525797626f772b9da9d))
+
 ## [1.3.2](https://github.com/web3-storage/w3link/compare/w3link-edge-gateway-v1.3.1...w3link-edge-gateway-v1.3.2) (2023-03-07)
 
 
