@@ -83,7 +83,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           cache: 'pnpm'
-          node-version: 16
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
       - run: pnpm install
       - name: Deploy
