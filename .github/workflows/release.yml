@@ -1,0 +1,48 @@
+on:
+  push:
+    branches:
+      - main
+name: Release
+jobs:
+  release-staging:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/test
+      - name: Deploy to Staging
+        uses: cloudflare/wrangler-action@v3
+        env:
+          ENV: 'staging'
+          SENTRY_TOKEN: ${{secrets.SENTRY_TOKEN}}
+          SENTRY_UPLOAD: ${{ secrets.SENTRY_UPLOAD }}
+        with:
+          apiToken: ${{secrets.CF_GATEWAY_TOKEN }}
+          workingDirectory: 'packages/edge-gateway-link'
+          environment: 'staging'
+  release-production:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          release-type: node
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/test
+      - name: Deploy to Production
+        uses: cloudflare/wrangler-action@v3
+                env:
+          ENV: 'production' # inform the build process what the env is
+          SENTRY_TOKEN: ${{ secrets.SENTRY_TOKEN }}
+          SENTRY_UPLOAD: ${{ secrets.SENTRY_UPLOAD }}
+        with:
+          apiToken: ${{ secrets.CF_GATEWAY_TOKEN }}
+          workingDirectory: 'packages/edge-gateway-link'
+          environment: 'production'
+        if: ${{ steps.release.outputs.release_created }}
+        
