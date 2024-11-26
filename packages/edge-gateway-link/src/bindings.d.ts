@@ -1,4 +1,4 @@
-import { Toucan } from 'toucan-js'
+import Toucan from 'toucan-js'
 import { Logging } from '@web3-storage/worker-utils/loki'
 
 export {}
