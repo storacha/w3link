@@ -1,9 +1,0 @@
-{
-  "release-type": "node",
-  "include-component-in-tag": true,
-  "packages": {
-    "packages/edge-gateway-link": {
-      "package-name": "w3link-edge-gateway"
-    }
-  }
-}
