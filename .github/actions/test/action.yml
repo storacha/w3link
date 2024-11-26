@@ -12,5 +12,7 @@ runs:
         registry-url: 'https://registry.npmjs.org'
         node-version: 20
         cache: 'pnpm'
+    - run: pnpm install
+      shell: bash
     - run: pnpm test:w3link-edge-gateway
       shell: bash
