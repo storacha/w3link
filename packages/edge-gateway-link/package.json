@@ -17,14 +17,14 @@
     "itty-router": "^2.4.5",
     "multiformats": "^9.6.4",
     "p-retry": "^5.1.2",
-    "toucan-js": "^3.4.0"
+    "toucan-js": "^2.5.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.7.1",
     "@types/git-rev-sync": "^2.0.0",
-    "@sentry/cli": "^2.7.0",
+    "@sentry/cli": "^1.71.0",
     "@web-std/fetch": "^4.0.0",
-    "@web3-storage/worker-utils": "^0.6.0-dev",
+    "@web3-storage/worker-utils": "^0.3.0-dev",
     "ava": "^3.15.0",
     "browser-env": "^3.3.0",
     "delay": "^5.0.0",
