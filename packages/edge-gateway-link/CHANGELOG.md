@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.4](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.3.3...w3link-edge-gateway-v1.3.4) (2024-11-26)
+
+
+### Bug Fixes
+
+* update org name in Sentry configs ([0a8d87d](https://github.com/storacha/w3link/commit/0a8d87db852ad2e7f4175f888e07adf89461cadb))
+
 ## [1.3.3](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.3.2...w3link-edge-gateway-v1.3.3) (2024-11-21)
 
 
