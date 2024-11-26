@@ -36,7 +36,7 @@ jobs:
       - uses: ./.github/actions/test
       - name: Deploy to Production
         uses: cloudflare/wrangler-action@v3
-                env:
+        env:
           ENV: 'production' # inform the build process what the env is
           SENTRY_TOKEN: ${{ secrets.SENTRY_TOKEN }}
           SENTRY_UPLOAD: ${{ secrets.SENTRY_UPLOAD }}
