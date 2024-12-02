@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.3.4...w3link-edge-gateway-v1.4.0) (2024-12-02)
+
+
+### Features
+
+* remove loki logging and rely on logpush ([80ad9b5](https://github.com/storacha/w3link/commit/80ad9b59e6bea1c5db03a34fbcbe8efe527e3f71))
+
 ## [1.3.4](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.3.3...w3link-edge-gateway-v1.3.4) (2024-11-26)
 
 
