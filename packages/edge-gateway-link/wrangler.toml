@@ -37,6 +37,7 @@ GATEWAY_HOSTNAME = 'ipfs.w3s.link'
 CSP_REPORT_URI = 'https://csp-report-to.web3.storage'
 DEBUG = "false"
 ENV = "production"
+UCANTO_SERVER_URL = 'https://freeway.dag.haus'
 
 [[env.production.services]]
 binding = "EDGE_GATEWAY"
@@ -64,6 +65,7 @@ GATEWAY_HOSTNAME = 'ipfs-staging.w3s.link'
 CSP_REPORT_URI = 'https://staging.csp-report-to.web3.storage'
 DEBUG = "true"
 ENV = "staging"
+UCANTO_SERVER_URL = 'https://freeway-staging.dag.haus'
 
 [[env.staging.services]]
 binding = "EDGE_GATEWAY"
@@ -82,3 +84,4 @@ kv_namespaces = [
 GATEWAY_HOSTNAME = 'ipfs.localhost:8787'
 DEBUG = "true"
 ENV = "test"
+UCANTO_SERVER_URL = 'http://localhost:8000'

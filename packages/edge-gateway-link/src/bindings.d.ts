@@ -13,6 +13,7 @@ export interface EnvInput {
   GATEWAY_HOSTNAME: string
   CSP_REPORT_URI: string
   GOODBITSLIST: KVNamespace
+  UCANTO_SERVER_URL: string
 }
 
 export interface EnvTransformed {
