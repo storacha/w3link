@@ -1,4 +1,18 @@
 import { test, getMiniflare } from './utils/setup.js'
+import http from 'node:http'
+
+test.before(async () => {
+  const ucantoServer = http.createServer((req, res) => {
+    if (req.method === 'POST') {
+      res.setHeader('X-Proxied-By', 'TestUcantoServer')
+      res.end()
+    } else {
+      res.statusCode = 405
+      res.end('Method Not Allowed')
+    }
+  })
+  await new Promise(resolve => ucantoServer.listen(8000, () => resolve(undefined)))
+})
 
 test.beforeEach((t) => {
   // Create a new Miniflare environment for each test
@@ -74,4 +88,14 @@ test('Gets content with csp header when goodbits csp bypass tag does not exist',
   // CSP exists
   const csp = response.headers.get('content-security-policy')
   t.truthy(csp)
+})
+
+test('Proxies POST requests to the UCANTO Server', async t => {
+  const res = await t.context.mf.dispatchFetch('http://localhost:8787', {
+    method: 'POST',
+    body: JSON.stringify({ key: 'value' })
+  })
+
+  t.is(res.headers.get('X-Proxied-By'), 'TestUcantoServer')
+  t.true(res.ok)
 })
