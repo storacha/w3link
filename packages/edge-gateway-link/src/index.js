@@ -48,8 +48,8 @@ function serverError (error, request, env) {
 async function proxyPostRequest(request, env) {
   const originRequest = new Request(request)
   const url = new URL(request.url)
-  const targetUrl = `${env.UCANTO_SERVER_URL}${url.pathname}`
-  const response = await fetch(targetUrl, originRequest)
+  const targetUrl = new URL(url.pathname, env.UCANTO_SERVER_URL)
+  const response = await fetch(targetUrl.origin, originRequest)
   return response
 }
 
