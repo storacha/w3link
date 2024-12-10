@@ -1,6 +1,6 @@
 {
   "name": "w3link-edge-gateway",
-  "version": "1.3.4",
+  "version": "1.4.0",
   "description": "IPFS edge gateway for web3.storage on w3s.link",
   "private": true,
   "type": "module",
