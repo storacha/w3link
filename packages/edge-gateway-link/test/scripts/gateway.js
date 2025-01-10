@@ -16,8 +16,7 @@ export default {
         request.url.replace('localhost:8787', IPFS_GATEWAY_REDIRECT_HOSTNAME),
         307
       )
-    }
-    else if (subdomainCid) {
+    } else if (subdomainCid) {
       const headers = new Headers({
         etag: subdomainCid
       })

@@ -7,7 +7,7 @@ import { ipnsGet } from './ipns.js'
 import { versionGet } from './version.js'
 import { gatewayGet } from './gateway.js'
 
-import { addCorsHeaders, withCorsHeaders } from './cors.js'
+import { addCorsHeaders, corsPreflightRequest, withCorsHeaders } from './cors.js'
 import { errorHandler } from './error-handler.js'
 import { envAll } from './env.js'
 
@@ -18,6 +18,7 @@ const router = Router()
 
 router
   .all('*', envAll)
+  .options('*', corsPreflightRequest)
   .post('*', withCorsHeaders(proxyPostRequest))
   .get('/version', withCorsHeaders(versionGet))
   .get('/ipfs/:cid', withCorsHeaders(ipfsGet))
@@ -45,7 +46,7 @@ function serverError (error, request, env) {
  * @param {import('./env').Env} env
  * @returns {Promise<Response>}
  */
-async function proxyPostRequest(request, env) {
+async function proxyPostRequest (request, env) {
   const originRequest = new Request(request)
   const url = new URL(request.url)
   const targetUrl = new URL(url.pathname, env.UCANTO_SERVER_URL)

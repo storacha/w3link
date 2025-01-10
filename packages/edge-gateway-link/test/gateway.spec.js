@@ -99,3 +99,10 @@ test('Proxies POST requests to the UCANTO Server', async t => {
   t.is(res.headers.get('X-Proxied-By'), 'TestUcantoServer')
   t.true(res.ok)
 })
+
+test('Handles OPTIONS requests', async t => {
+  const res = await t.context.mf.dispatchFetch('http://localhost:8787', {
+    method: 'OPTIONS'
+  })
+  t.is(res.status, 204)
+})
