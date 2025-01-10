@@ -40,7 +40,7 @@ export function addCorsHeaders (request, response) {
  * @param {Request} request
  * @returns {Response}
  */
-export function withPreflightRequest (request) {
+export function corsPreflightRequest (request) {
   const headers = new Headers()
   headers.set('Access-Control-Allow-Origin', request.headers.get('origin') || '*')
   headers.set('Access-Control-Allow-Methods', 'GET, HEAD, POST, OPTIONS')

@@ -7,7 +7,7 @@ import { ipnsGet } from './ipns.js'
 import { versionGet } from './version.js'
 import { gatewayGet } from './gateway.js'
 
-import { addCorsHeaders, withPreflightRequest, withCorsHeaders } from './cors.js'
+import { addCorsHeaders, corsPreflightRequest, withCorsHeaders } from './cors.js'
 import { errorHandler } from './error-handler.js'
 import { envAll } from './env.js'
 
@@ -18,7 +18,7 @@ const router = Router()
 
 router
   .all('*', envAll)
-  .options('*', withPreflightRequest)
+  .options('*', corsPreflightRequest)
   .post('*', withCorsHeaders(proxyPostRequest))
   .get('/version', withCorsHeaders(versionGet))
   .get('/ipfs/:cid', withCorsHeaders(ipfsGet))
