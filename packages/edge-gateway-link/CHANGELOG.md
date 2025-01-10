@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.4.0...w3link-edge-gateway-v1.4.1) (2025-01-10)
+
+
+### Bug Fixes
+
+* handling preflight requests ([#66](https://github.com/storacha/w3link/issues/66)) ([60f8337](https://github.com/storacha/w3link/commit/60f8337d6d5dc3923d51d7a75495544aafbf771a))
+
 ## [1.4.0](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.3.4...w3link-edge-gateway-v1.4.0) (2024-12-13)
 
 
