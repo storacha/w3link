@@ -33,3 +33,17 @@ export function addCorsHeaders (request, response) {
   response.headers.set('Access-Control-Expose-Headers', 'Link')
   return response
 }
+
+/**
+ * Handle OPTIONS requests in the proxy itself by returning a 204 No Content response with CORS headers.
+ *
+ * @param {Request} request
+ * @returns {Response}
+ */
+export function withPreflightRequest (request) {
+  const headers = new Headers()
+  headers.set('Access-Control-Allow-Origin', request.headers.get('origin') || '*')
+  headers.set('Access-Control-Allow-Methods', 'GET, HEAD, POST, OPTIONS')
+  headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+  return new Response(null, { headers, status: 204 })
+}
