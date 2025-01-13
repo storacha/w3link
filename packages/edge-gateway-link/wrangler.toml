@@ -51,7 +51,7 @@ environment = "production"
 # name = "gateway-nft-storage-staging"
 account_id = "fffa4b4363a7e5250af8357087263b3a" # Protocol Labs CF account
 routes = [
-  { pattern = "w3s-staging.link/", zone_id = "ae60d8f737317467ec666dc3851a6277" },
+  { pattern = "staging.w3s.link/", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "*.ipfs-staging.w3s.link/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "ipfs-staging.w3s.link/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "*.ipfs-staging.w3s.link", zone_id = "ae60d8f737317467ec666dc3851a6277" },
