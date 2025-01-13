@@ -42,8 +42,18 @@ export function addCorsHeaders (request, response) {
  */
 export function corsPreflightRequest (request) {
   const headers = new Headers()
-  headers.set('Access-Control-Allow-Origin', request.headers.get('origin') || '*')
+
+  const origin = request.headers.get('origin')
+  if (origin) {
+    headers.set('Access-Control-Allow-Origin', origin)
+    headers.set('Vary', 'Origin')
+  } else {
+    headers.set('Access-Control-Allow-Origin', '*')
+  }
+
   headers.set('Access-Control-Allow-Methods', 'GET, HEAD, POST, OPTIONS')
   headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+  headers.set('Access-Control-Max-Age', '86400') // Cache preflight for 24 hours
+
   return new Response(null, { headers, status: 204 })
 }
