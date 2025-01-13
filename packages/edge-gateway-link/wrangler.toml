@@ -19,6 +19,7 @@ ENV = "dev"
 # name = "w3link-edge-gateway-production"
 account_id = "fffa4b4363a7e5250af8357087263b3a" # Protocol Labs CF account
 routes = [
+  { pattern = "w3s.link/", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "w3s.link/ipfs/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "*.ipfs.w3s.link/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "ipfs.w3s.link/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
@@ -50,6 +51,7 @@ environment = "production"
 # name = "gateway-nft-storage-staging"
 account_id = "fffa4b4363a7e5250af8357087263b3a" # Protocol Labs CF account
 routes = [
+  { pattern = "w3s-staging.link/", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "*.ipfs-staging.w3s.link/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "ipfs-staging.w3s.link/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "*.ipfs-staging.w3s.link", zone_id = "ae60d8f737317467ec666dc3851a6277" },
