@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.2](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.4.1...w3link-edge-gateway-v1.4.2) (2025-01-13)
+
+
+### Bug Fixes
+
+* preflight cors + caching + new route ([#68](https://github.com/storacha/w3link/issues/68)) ([0e18daa](https://github.com/storacha/w3link/commit/0e18daa676931e5142794201d3a0aeb647fe30bd))
+* root route in staging ([#70](https://github.com/storacha/w3link/issues/70)) ([b5fb599](https://github.com/storacha/w3link/commit/b5fb599ce2013abf0445464bbe65ce88b3066b73))
+
 ## [1.4.1](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.4.0...w3link-edge-gateway-v1.4.1) (2025-01-10)
 
 
