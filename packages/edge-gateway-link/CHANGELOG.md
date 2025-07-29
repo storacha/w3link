@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.5.0...w3link-edge-gateway-v1.5.1) (2025-07-29)
+
+
+### Bug Fixes
+
+* add storacha.link gateway ([68042e8](https://github.com/storacha/w3link/commit/68042e87d4f19e4c5f3f5b2522cdb0f417a69b3f))
+
 ## [1.5.0](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.4.2...w3link-edge-gateway-v1.5.0) (2025-07-29)
 
 
