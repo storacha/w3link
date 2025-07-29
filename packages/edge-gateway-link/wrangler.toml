@@ -27,7 +27,15 @@ routes = [
   { pattern = "w3s.link/ipns/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "*.ipns.w3s.link/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
   { pattern = "*.ipns.w3s.link", zone_id = "ae60d8f737317467ec666dc3851a6277" },
-  { pattern = "*/*", zone_id = "ae60d8f737317467ec666dc3851a6277" }
+  { pattern = "*/*", zone_id = "ae60d8f737317467ec666dc3851a6277" },
+  # storacha.link
+  { pattern = "storacha.link/", zone_id = "62829b72c60604f88de28efe01a82edf" },
+  { pattern = "storacha.link/ipfs/*", zone_id = "62829b72c60604f88de28efe01a82edf" },
+  { pattern = "*.ipfs.storacha.link/*", zone_id = "62829b72c60604f88de28efe01a82edf" },
+  { pattern = "ipfs.storacha.link/*", zone_id = "62829b72c60604f88de28efe01a82edf" },
+  { pattern = "*.ipfs.storacha.link", zone_id = "62829b72c60604f88de28efe01a82edf" },
+  # gateway.storacha.network (UCAN endpoint)
+  { pattern = "gateway.storacha.network", zone_id = "37783d6f032b78cd97ce37ab6fd42848" }
 ]
 kv_namespaces = [
   { binding = "GOODBITSLIST", id = "292616354e2a4f83b7ac13ef30d66a30" }
