@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.4.2...w3link-edge-gateway-v1.5.0) (2025-07-29)
+
+
+### Features
+
+* configure alternate gateway domains ([#71](https://github.com/storacha/w3link/issues/71)) ([0f4bdc7](https://github.com/storacha/w3link/commit/0f4bdc75733eec94abfa68fc14c22a2f1adb5ce1))
+
 ## [1.4.2](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.4.1...w3link-edge-gateway-v1.4.2) (2025-01-13)
 
 
