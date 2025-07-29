@@ -8,6 +8,7 @@ import { InvalidUrlError } from './errors.js'
 const PRODUCT_URL = 'https://web3.storage/products/w3link/'
 const GOODBITS_BYPASS_TAG = 'https://w3s.link/tags/bypass-default-csp'
 const IPFS_GATEWAYS = [
+  'https://*.storacha.link',
   'https://*.w3s.link',
   'https://*.nftstorage.link',
   'https://*.dweb.link',
