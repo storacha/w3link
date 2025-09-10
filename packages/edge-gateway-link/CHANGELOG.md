@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.5.1...w3link-edge-gateway-v1.5.2) (2025-09-10)
+
+
+### Bug Fixes
+
+* remove tableland ([0e8e31d](https://github.com/storacha/w3link/commit/0e8e31d88338f4378d9f4188fdca766e6382fad4))
+
 ## [1.5.1](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.5.0...w3link-edge-gateway-v1.5.1) (2025-07-29)
 
 
