@@ -45,9 +45,7 @@ export async function gatewayGet (request, env) {
   const response = await env.EDGE_GATEWAY.fetch(request.url, {
     headers: request.headers,
     cf: {
-      ...request.cf || {},
-      // @ts-ignore custom entry in cf object
-      onlyIfCachedGateways: JSON.stringify(['https://nftstorage.link'])
+      ...request.cf || {}
     },
     redirect: 'manual'
   })
