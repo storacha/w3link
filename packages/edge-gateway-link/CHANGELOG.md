@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.3](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.5.2...w3link-edge-gateway-v1.5.3) (2025-11-24)
+
+
+### Bug Fixes
+
+* remove `onlyIfCachedGateways` from fetch options ([96e9bff](https://github.com/storacha/w3link/commit/96e9bffbc9036d6c1c62f349070982cf3cc4ce78))
+* remove `onlyIfCachedGateways` from fetch options ([#76](https://github.com/storacha/w3link/issues/76)) ([8374237](https://github.com/storacha/w3link/commit/837423741d73989f0fe73e2c9e6b874b13d04bac))
+
 ## [1.5.2](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.5.1...w3link-edge-gateway-v1.5.2) (2025-09-10)
 
 
