@@ -21,6 +21,7 @@ router
   .options('*', corsPreflightRequest)
   .post('*', withCorsHeaders(proxyPostRequest))
   .get('/version', withCorsHeaders(versionGet))
+  .get('/.well-known/did.json', withCorsHeaders(proxyGetRequest))
   .get('/ipfs/:cid', withCorsHeaders(ipfsGet))
   .get('/ipfs/:cid/*', withCorsHeaders(ipfsGet))
   .head('/ipfs/:cid', withCorsHeaders(ipfsGet))
@@ -52,6 +53,17 @@ async function proxyPostRequest (request, env) {
   const targetUrl = new URL(url.pathname, env.UCANTO_SERVER_URL)
   const response = await fetch(targetUrl.origin, originRequest)
   return response
+}
+
+/**
+ * Proxy GET requests to the edge gateway defined in the environment.
+ *
+ * @param {Request} request
+ * @param {import('./env').Env} env
+ * @returns {Promise<Response>}
+ */
+async function proxyGetRequest (request, env) {
+  return env.EDGE_GATEWAY.fetch(request.url)
 }
 
 export default {
