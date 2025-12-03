@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.5.3...w3link-edge-gateway-v1.6.0) (2025-12-02)
+
+
+### Features
+
+* proxy DID document ([#78](https://github.com/storacha/w3link/issues/78)) ([1f0d6d7](https://github.com/storacha/w3link/commit/1f0d6d786bf9a926289e49015173cd462108b2c9))
+
 ## [1.5.3](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.5.2...w3link-edge-gateway-v1.5.3) (2025-11-24)
 
 
