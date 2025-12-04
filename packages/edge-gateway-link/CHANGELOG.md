@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.1](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.6.0...w3link-edge-gateway-v1.6.1) (2025-12-04)
+
+
+### Bug Fixes
+
+* proxy headers also ([c2b0a52](https://github.com/storacha/w3link/commit/c2b0a52d5942cc60453ca0e680eec2e663abfc79))
+
 ## [1.6.0](https://github.com/storacha/w3link/compare/w3link-edge-gateway-v1.5.3...w3link-edge-gateway-v1.6.0) (2025-12-02)
 
 
