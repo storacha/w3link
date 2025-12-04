@@ -63,7 +63,7 @@ async function proxyPostRequest (request, env) {
  * @returns {Promise<Response>}
  */
 async function proxyGetRequest (request, env) {
-  return env.EDGE_GATEWAY.fetch(request.url)
+  return env.EDGE_GATEWAY.fetch(request.url, { headers: request.headers })
 }
 
 export default {
